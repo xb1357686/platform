@@ -188,7 +188,7 @@ class Platform extends React.Component {
           courseDesc: values.courseDesc,
           courseRelationList: [...childrenList]
         }
-        putCourse(obj).then(res => {
+        addCourse(obj).then(res => {
           if (res && res.data.code === 200 && res.status === 200) {
             message.success('新增成功')
             this.okGetInfo();

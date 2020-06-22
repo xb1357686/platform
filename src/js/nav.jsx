@@ -133,7 +133,6 @@ class Nav extends React.Component {
   }
 
   createUserInfoMenu = (data, size) => {
-    console.log(data);
     if (!data) {
       let loginDom = <Row>
         <Col span={12} className={Styles.logining} >
@@ -164,7 +163,7 @@ class Nav extends React.Component {
       return (
         <Menu>
           <Menu.Item key="4">
-            <div ><Avatar shape="square" src={baseUrl + data.avatar} /> <span className={Styles.userName}>{this.state.userInfo.username}</span></div>
+            <div><Avatar shape="square" src={baseUrl + data.avatar} /> <span className={Styles.userName}>{this.state.userInfo.username}</span></div>
           </Menu.Item>
           <Menu.Item key="5">
             <Link to={'/admin'}>管理平台</Link>
@@ -189,7 +188,7 @@ class Nav extends React.Component {
         <Dropdown overlay={userMenu} trigger={['click']}>
           <Row className={Styles.logined}>
             {/* <Col md={{ span: 12 }}><Avatar shape="square" src={baseUrl + data.avatar} /></Col> */}
-            <Col md={{ span: 12 }}><span className={Styles.userName}>{this.state.userInfo.username}</span></Col>
+            <Col md={{ span: 24 }}><span className={Styles.userName}>{this.state.userInfo.username}</span></Col>
           </Row>
         </Dropdown>
       )
@@ -240,7 +239,6 @@ class Nav extends React.Component {
         {userInfoMenu}
       </Menu>
     );
-    console.log(schoolInfo);
     return (
 
       <div className={Styles.menuList} id="navBar">
@@ -253,7 +251,7 @@ class Nav extends React.Component {
             <Col md={{ span: 2 }} xs={{ span: 3 }}><Link style={{ textDecoration: 'none', color: '#fff' }} to="/community" title="社区"><div onClick={() => this.changeColor(4)} style={{ backgroundColor: this.state.color === 4 ? 'rgba(255,255,255,.1)' : '#032951' }} className={Styles.homePage}>社区</div></Link></Col>
             {/* <Col md={{ span: 2 }} xs={{ span: 2 }}><a style={{ textDecoration: 'none', color: '#fff' }} href="https://kms.maiyajia.com/" title="学院" target="_blank"><div style={{ backgroundColor: '#032951' }} className={Styles.homePage}>学院</div></a></Col> */}
             {/* <Col md={{ span: 2 }} xs={{ span: 2 }}><Link style={{ textDecoration: 'none', color: '#fff' }} to="/admin" title="课程"><div onClick={() => this.changeColor(10)} style={{ backgroundColor: this.state.color === 10 ? 'rgba(255,255,255,.1)' : '#032951' }} className={Styles.homePage}>课程</div></Link></Col> */}
-            <Col md={{ span: 3 }} sm={{ span: 4 }} xl={{ span: 3 }} style={{ float: 'right' }}>{userInfoMenu}</Col>
+            <Col md={{ span: 3 }} sm={{ span: 4 }} xl={{ span: 3 }} style={{ float: 'right', overflow: 'hidden', height: '64px' }}>{userInfoMenu}</Col>
           </Col>
           <LoginForm show={this.state.showLoginForm} onLoginSuccess={this.onLoginSuccess} />
           <Col xs={2} sm={0} md={0} lg={0} xl={0} style={{ float: 'right' }}>
