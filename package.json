@@ -30,7 +30,7 @@
     "stl-viewer": "^0.12.0",
     "survey-react": "^1.0.64",
     "surveyjs-widgets": "latest",
-    "three": "^0.104.0",
+    "three": "^0.137.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "vector-month": "^1.2.1"
   },
